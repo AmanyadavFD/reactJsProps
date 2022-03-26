@@ -4,21 +4,25 @@ import ReactDOM from "react-dom";
 import "./index.css";
 const books = [
   {
+    id: 1,
     image: "https://m.media-amazon.com/images/I/715KxZLSFBL._AC_UY218_.jpg",
     title: "Brain Games for Clever Games, 1",
     author: "Gareth Moore",
   },
   {
+    id: 2,
     image: "https://m.media-amazon.com/images/I/715KxZLSFBL._AC_UY218_.jpg",
     title: "Brain Games for Clever Games, 1",
     author: "Gareth Moore",
   },
   {
+    id: 3,
     image: "https://m.media-amazon.com/images/I/715KxZLSFBL._AC_UY218_.jpg",
     title: "Brain Games for Clever Games, 1",
     author: "Gareth Moore",
   },
   {
+    id: 4,
     image: "https://m.media-amazon.com/images/I/715KxZLSFBL._AC_UY218_.jpg",
     title: "Brain Games for Clever Games, 1",
     author: "Gareth Moore",
@@ -28,8 +32,13 @@ const books = [
 function BookList() {
   return (
     <section className="booklist">
+      {/* using key and props  */}
+
+      {/* {books.map((book, index) => {
+        return <Book book={book} key={index} />;
+      })} */}
       {books.map((book) => {
-        return <Book book={book} />;
+        return <Book book={book} key={book.id} />;
       })}
     </section>
   );
