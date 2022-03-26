@@ -32,11 +32,6 @@ const books = [
 function BookList() {
   return (
     <section className="booklist">
-      {/* using key and props  */}
-
-      {/* {books.map((book, index) => {
-        return <Book book={book} key={index} />;
-      })} */}
       {books.map((book) => {
         return <Book {...book} key={book.id} />;
       })}
@@ -45,15 +40,35 @@ function BookList() {
 }
 
 const Book = ({ image, title, author }) => {
-  // const { image, title, author } = props;
-  // console.log(props);
-
+  // attribute , event handler
+  const clickHandler = () => {
+    alert("hello world");
+  };
+  const complexExample = () => {
+    console.log(author);
+  };
   return (
-    <article className="book">
+    <article
+      className="book"
+      onMouseOver={() => {
+        console.log(title);
+      }}
+    >
       <img src={image} alt="book" />
-      <h1>{title}</h1>
-
+      <h1
+        onClick={() => {
+          console.log(title);
+        }}
+      >
+        {title}
+      </h1>
       <h2>{author}</h2>
+      <button type="button" onClick={clickHandler}>
+        reference example
+      </button>
+      <button type="button" onClick={() => complexExample(author)}>
+        more complex example
+      </button>
     </article>
   );
 };
