@@ -13,20 +13,30 @@ const books = [
     title: "Brain Games for Clever Games, 1",
     author: "Gareth Moore",
   },
+  {
+    image: "https://m.media-amazon.com/images/I/715KxZLSFBL._AC_UY218_.jpg",
+    title: "Brain Games for Clever Games, 1",
+    author: "Gareth Moore",
+  },
+  {
+    image: "https://m.media-amazon.com/images/I/715KxZLSFBL._AC_UY218_.jpg",
+    title: "Brain Games for Clever Games, 1",
+    author: "Gareth Moore",
+  },
 ];
 
 function BookList() {
   return (
     <section className="booklist">
       {books.map((book) => {
-        const { image, title, author } = book;
-        return <Book image={image} title={title} author={author} />;
+        return <Book book={book} />;
       })}
     </section>
   );
 }
 
-const Book = ({ image, title, author }) => {
+const Book = (props) => {
+  const { image, title, author } = props.book;
   return (
     <article className="book">
       <img src={image} alt="book" />
